@@ -7,11 +7,11 @@ const database = {
         { id: 5, name: "St. Paul", address: "", size: 1.1, maxOccupancy: 200 }
     ],
     bands: [
-        { id: 1, name: "", memberNumber: 2, genre: "", founded: 2002 },
-        { id: 2, name: "", memberNumber: 2, genre: "", founded: 2002 },
-        { id: 3, name: "", memberNumber: 2, genre: "", founded: 2002 },
-        { id: 4, name: "", memberNumber: 2, genre: "", founded: 2002 },
-        { id: 5, name: "", memberNumber: 2, genre: "", founded: 2002 }
+        { id: 1, name: "Toe Jam", memberNumber: 2, genre: "Dad Rock", founded: 2002 },
+        { id: 2, name: "SSSTANK", memberNumber: 4, genre: "Classical", founded: 2005 },
+        { id: 3, name: "Marley", memberNumber: 1, genre: "Pop", founded: 2020 },
+        { id: 4, name: "Bucket Heads", memberNumber: 10, genre: "New Age Pop", founded: 2012 },
+        { id: 5, name: "Trash Punk", memberNumber: 2, genre: "EDM", founded: 1996 }
     ],
     bookings: [
         { id: 1, date: "12-11-23", bandId: [2, 3], venueId: 2 },

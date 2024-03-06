@@ -10,7 +10,7 @@ export const BookingList = () => {
         for (const venue of venues) {
             if (booking.venueId === venue.id)
             html += `<li>
-            ${venue.name} are playing at the ${venue.name}
+            ${venue.name} are playing at the ${venue.name} on ${booking.date}
             </li>`
             
         }
