@@ -4,24 +4,19 @@ const bookings = getBookings()
 const venues = getVenues()
 const bands = getBands()
 
-// click event gives all band info when a li is clicked
 document.addEventListener(
     "click",
     (clickEvent) => {
         const clickTarget = clickEvent.target
 
         if (clickTarget.dataset.type === "booking") {
-            for (const band of bands) {
-                
-            }
-
 
             window.alert("booking ayyyy")
         }
     }
 )
 
-
+// Making an HTML list of all the bookings with band, venue, and date information
 export const BookingList = () => {
 
     let html = "<ul>"
@@ -49,7 +44,7 @@ export const BookingList = () => {
             html += `<li
             data-type="booking"
             >
-            ${bandBookingHTML.slice(4)} are playing at the ${venue.name} on ${booking.date}
+            ${bandBookingHTML.slice(4)} are playing at ${venue.name} on ${booking.date}
             </li>`
             
         }

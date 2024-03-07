@@ -11,39 +11,38 @@ document.addEventListener(
 
         if (clickTarget.dataset.type === "band") {
 
-            let venueId = ""
-            let nameOfVenue = "Hi"
-
-            
-
-            for (const booking of bookings) {
-                if (clickTarget.dataset.id === booking.bandId) {
-                    // return the venueId
-                    venueId += booking.venueId
-                    // then iterate through venues to match
-                    for (const venue of venues) { 
-                        if (venueId === venue.id) {
-                            nameOfVenue += venue.name
-                        }
-                        
-                    }
-                }
-            }
-            
-
-           window.alert(`${nameOfVenue}`)
+           window.alert(`${clickTarget.dataset.name} is playing at ${clickTarget.dataset.venueid}`)
         }
     }
 )
 
+
+// Creating a list of the bands in html
 export const BandsList = () => {
     let html = "<ul>"
 
+    // We iterate for each band and make a list
     for (const band of bands) {
+        let bandVenue = ""
+        // We need to know the venue the band is playing at, so first we iterate through bookings
+        for (const booking of bookings) {
+            // Then through each bandId in the array of bookings.bandId
+            for (const bookingBandId of booking.bandId) {
+                if (bookingBandId === band.id) {
+                    // Finally the venue that is attach to the booking/band
+                    for (const venue of venues) {
+                        if (venue.id === booking.venueId) {
+                            bandVenue += `, ${venue.name}`
+                        } 
+                    }
+                }
+            }
+        }
+        // make sure we have proper data tags so we can refer properly in the "click" event
         html += `<li
         data-type="band"
         data-name="${band.name}"
-        data-id="${band.id}"
+        data-venueid="${bandVenue.slice(2)}"
         >${band.name}</li>`
     }
 
