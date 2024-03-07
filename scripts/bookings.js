@@ -11,7 +11,13 @@ document.addEventListener(
 
         if (clickTarget.dataset.type === "booking") {
 
-            window.alert("booking ayyyy")
+            window.alert(
+            `
+            ${clickTarget.dataset.bandname}
+            ${clickTarget.dataset.bandgenre}
+            ${clickTarget.dataset.bandformed}
+            ${clickTarget.dataset.bandmembers}
+            `)
         }
     }
 )
@@ -27,11 +33,20 @@ export const BookingList = () => {
 
         
         // This nested forof loop iterates through the bandIds and concats a string
+        // Also stores the band information so we can store it in a data set
         let bandBookingHTML = ""
+        let bandBookingName = ""
+        let bandBookingGenre = ""
+        let bandBookingFormed = ""
+        let bandBookingBandMembers = ""
         for (const bandId of booking.bandId) {           
             for (const band of bands) {
                 if (band.id === bandId) {
                     bandBookingHTML += `and ${band.name} `
+                    bandBookingName += `, ${band.name}`
+                    bandBookingGenre += `, ${band.genre}`
+                    bandBookingFormed += `, Formed in ${band.founded}`
+                    bandBookingBandMembers += `, ${band.memberNumber} band members`
                 }
             }
         }
@@ -39,10 +54,15 @@ export const BookingList = () => {
 
 
         // This nested forof loop iterates through the venueIds and concats a string of bands, venues, and bookingdates in a li
+        // We are also storing the band information into the li. So we can later click and get their info
         for (const venue of venues) {
             if (booking.venueId === venue.id)
             html += `<li
             data-type="booking"
+            data-bandname="${bandBookingName.slice(2)}"
+            data-bandgenre="${bandBookingGenre.slice(2)}"
+            data-bandformed="${bandBookingFormed.slice(2)}"
+            data-bandmembers="${bandBookingBandMembers.slice(2)}"
             >
             ${bandBookingHTML.slice(4)} are playing at ${venue.name} on ${booking.date}
             </li>`

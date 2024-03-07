@@ -14,11 +14,16 @@ const database = {
         { id: 5, name: "Trash Punk", memberNumber: 2, genre: "EDM", founded: 1996 }
     ],
     bookings: [
-        { id: 1, date: "12-11-23", bandId: [2, 3], venueId: 2 },
-        { id: 2, date: "12-11-23", bandId: [2], venueId: 1 },
-        { id: 3, date: "12-11-23", bandId: [1, 5], venueId: 4 },
-        { id: 4, date: "12-11-23", bandId: [4], venueId: 5 },
-        { id: 5, date: "12-11-23", bandId: [1, 3], venueId: 3 }
+        { id: 1, date: "02-07-2024", bandId: [2, 3], venueId: 2 },
+        { id: 2, date: "02-07-2024", bandId: [4], venueId: 1 },
+        { id: 3, date: "02-07-2024", bandId: [1, 5], venueId: 4 },
+        { id: 4, date: "02-08-2024", bandId: [4], venueId: 5 },
+        { id: 5, date: "02-08-2024", bandId: [1, 3], venueId: 3 },
+        { id: 6, date: "02-09-2024", bandId: [5], venueId: 1 },
+        { id: 7, date: "02-09-2024", bandId: [2], venueId: 2 },
+        { id: 8, date: "02-09-2024", bandId: [3], venueId: 5 },
+        { id: 9, date: "02-09-2024", bandId: [4], venueId: 4 },
+        { id: 10, date: "02-10-2024", bandId: [1], venueId: 3 }
     ]
 }
 
